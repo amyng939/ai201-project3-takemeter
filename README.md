@@ -201,13 +201,20 @@ The model predicted this as reaction with high confidence, likely because the al
 
 ### Sample Classifications
 
-| Text | True Label | Predicted | Confidence | Notes |
-|------|-----------|-----------|------------|-------|
-| "This has to be an episode of Seinfeld." | joke | joke | — | Correctly identified as joke; the Seinfeld comparison is pure absurdist riffing with no emotional substance |
-| "She not fine" | joke | reaction | 0.84 | Short callback to wife's "I'm fine" quote; model missed the subversive humor |
-| "What was going to be your explanation had everything worked according to plan?" | question | question | — | Correctly identified; genuinely asks OP about their plan's logic |
-| "That sounds like a big misteak." | joke | reaction | 0.62 | Steak pun; model likely has no signal that "misteak" is intentional wordplay |
-| "Should've said it was a muscle spasm" | advice | joke | 0.77 | Short advice misread as joke; advice and joke overlap when advice is delivered with a comic framing |
+| Text | True Label | Predicted | Confidence |
+|------|-----------|-----------|------------|
+| "You are hilarious." | reaction | reaction | 0.67 |
+| "You could say this was a mis-steak" | joke | joke | 0.81 |
+| "What was going to be your explanation had everything worked according to plan? She leaves the room, you haven't taken one bite, she comes back and the entire steak is gone?" | question | question | 0.63 |
+| "This fucking story made my day. Thank you moron." | reaction | reaction | 0.98 |
+| "She not fine" | joke | reaction | 0.84 |
+
+The joke prediction on "You could say this was a mis-steak" is reasonable — 
+the comment is a single steak pun with no emotional substance, and the model 
+correctly identified that the wordplay is the entire point. This is one of 
+the cleaner joke signals in the dataset: short, no emotional language, and 
+the humor is self-contained in the text itself without requiring external 
+context like a username or cultural reference.
 
 ---
 
